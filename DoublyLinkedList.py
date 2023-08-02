@@ -71,13 +71,28 @@ class DoublyLinkedList:
             temp.next = None
         self.length -=1
         return temp
-
+    
+    def get(self,index):
+        if index <0 or index >=self.length:
+            return
+        temp = self.head
+        if index < self.length/2:
+            for _ in range(index):
+                temp = temp.next
+        else:
+            temp = self.tail
+            for _ in range(self.length-1,index,-1):
+                temp = temp.prev
+        return temp
 
 
 dll = DoublyLinkedList(1)
 dll.append(2)
 dll.append(3)
-dll.print_list()
+dll.append(4)
+dll.append(5)
+dll.append(6)
+""" dll.print_list()
 print('pop:',dll.pop())
 #print('pop:',dll.pop())
 #print('pop:',dll.pop())
@@ -85,5 +100,7 @@ print('pop:',dll.pop())
 print('Prepend:')
 dll.prepend(7)
 print('popfirst:')
-dll.pop_first()
+dll.pop_first() """
 dll.print_list()
+
+print(dll.get(4))
