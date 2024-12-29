@@ -26,10 +26,10 @@ class Solution:
     def plusOne(self, digits: list[int]) -> list[int]:
         s = ''
         
-        for i in range(len(digits)):
-            s += str(digits[i])
+        for n in digits:
+            s += str(n)
         res = int(s) + 1
-        return [int(digit) for digit in str(res)]
+        return [int(s) for s in str(res)]
 
     
 ss = Solution()

@@ -20,7 +20,7 @@ class HashTable:
 
     def get(self,key):
         index = self._hash(key)
-        if self.data_map[index] is not None:
+        if self.data_map[index]:
             for i in range(len(self.data_map[index])):
                 if self.data_map[index][i][0] == key:
                     return self.data_map[index][i][1]
@@ -37,8 +37,11 @@ class HashTable:
 my_hashtable = HashTable()
 my_hashtable.set_item('nails',1000)
 my_hashtable.set_item('bolts',1200)
+my_hashtable.set_item('bolt',100)
+my_hashtable.set_item('mail',500)
 my_hashtable.print_table()
+print("hash " + str(my_hashtable._hash('mail')))
 
-print(my_hashtable.get('bolts'))
+print(my_hashtable.get('bolt'))
 
 print(my_hashtable.keys())
